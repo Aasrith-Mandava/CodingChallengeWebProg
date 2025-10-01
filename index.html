@@ -3,69 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gotham Night — Spooktacular</title>
 
-  <!-- Google Fonts: spooky display + readable body -->
+  <title>Spooktacular — Halloween Storybook</title>
+  <meta name="description" content="A CSS-only interactive Halloween storybook with an Enchanted Mirror Maze finale.">
+
   <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Required single external stylesheet -->
   <link rel="stylesheet" href="spooktacular.css" />
 </head>
-
 <body>
-  <!-- Skip link for accessibility -->
+  <!-- Skip link -->
   <a class="skip-link" href="#page1">Skip to story</a>
 
-  <!-- Sticky Header & Navigation (CSS-only, mobile menu via :checked) -->
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a class="logo" href="#page1" aria-label="Go to story intro">🎃 Spooktacular</a>
-
-      <!-- Mobile menu toggle (CSS :checked) -->
+      <a class="logo" href="#page1">🎃 Spooktacular</a>
       <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open navigation" />
       <label for="menu-toggle" class="menu-button" aria-hidden="true" title="Menu" tabindex="0">☰</label>
-
       <nav class="site-nav" role="navigation" aria-label="Primary">
         <a href="#page1">Intro</a>
         <a href="#page2">Graveyard</a>
         <a href="#page3">Haunted Library</a>
         <a href="#page4">Pumpkin Patch</a>
-        
+        <a href="#page5">Mirror Maze</a>
       </nav>
     </div>
   </header>
 
-  <!-- Decorative starry sky / fog layers -->
+  <!-- Atmosphere -->
   <div class="atmosphere" aria-hidden="true">
     <div class="stars"></div>
     <div class="fog fog-1"></div>
     <div class="fog fog-2"></div>
   </div>
 
-  <main id="main" class="main" role="main">
-    <!-- PAGE 1: Soft Intro (hero + bats) -->
+  <main class="main" role="main">
+    <!-- PAGE 1 -->
     <section id="page1" class="page page-intro" aria-labelledby="p1-title">
       <header class="page-header">
-        <h1 id="p1-title" class="display hero-anim">Gotham at Dusk</h1>
+        <h1 id="p1-title" class="display hero-anim">A Night the Moon Wouldn’t Blink</h1>
         <p class="lede">The air is crisp, the pumpkins glow, and something stirs just beyond the cobwebs…</p>
       </header>
 
       <div class="hero">
         <div class="moon" aria-hidden="true"></div>
-        <div class="signal" aria-hidden="true"><div class="emblem"></div></div>
+        <div class="aurora" aria-hidden="true"></div>
         <div class="bats" aria-hidden="true">
           <span class="bat bat-a">🦇</span>
           <span class="bat bat-b">🦇</span>
           <span class="bat bat-c">🦇</span>
         </div>
-      </div>
+        <div class="shooting-star" aria-hidden="true"></div>
 
-      <div class="pager center">
-        <a class="btn primary next" href="#page2" aria-label="Enter the Graveyard">Enter the Graveyard →</a>
+        <div class="cta-wrapper">
+          <a class="btn btn-cta" href="#page2">Enter the Graveyard</a>
+        </div>
       </div>
     </section>
 
-    <!-- PAGE 2: Graveyard (cards + ghost hover + flip card) -->
+    <!-- PAGE 2 -->
     <section id="page2" class="page page-graveyard" aria-labelledby="p2-title">
       <header class="page-header">
         <h2 id="p2-title" class="display">Whispers Among the Stones</h2>
@@ -89,7 +84,6 @@
           <div class="wolf" aria-hidden="true"></div>
         </article>
 
-        <!-- CSS-only character “flip” using :checked -->
         <article class="card flip" tabindex="-1">
           <input type="checkbox" id="flip-card" class="flip-toggle" aria-label="Reveal secret" />
           <label for="flip-card" class="flip-card" aria-live="polite">
@@ -105,13 +99,13 @@
         </article>
       </section>
 
-      <nav class="pager">
+      <nav class="pager pager-center">
         <a class="btn prev" href="#page1">← Back</a>
         <a class="btn next" href="#page3">To the Haunted Library →</a>
       </nav>
     </section>
 
-    <!-- PAGE 3: Haunted Library (grid of tomes) -->
+    <!-- PAGE 3 -->
     <section id="page3" class="page page-library" aria-labelledby="p3-title">
       <header class="page-header">
         <h2 id="p3-title" class="display">The Library that Remembers</h2>
@@ -119,31 +113,31 @@
       </header>
 
       <section class="shelves" aria-label="Library shelves">
-        <article class="tome" tabindex="0">
+        <article class="tome glow" tabindex="0">
           <h3>Witch’s Almanac</h3>
-          <p class="micro">Hover to see the glint of the glyphs.</p>
+          <p class="micro">Hover to see the shimmer.</p>
         </article>
-        <article class="tome" tabindex="0">
+        <article class="tome glow" tabindex="0">
           <h3>Moonlit Maps</h3>
           <p class="micro">A path appears when focused.</p>
         </article>
-        <article class="tome" tabindex="0">
+        <article class="tome glow" tabindex="0">
           <h3>Graveyard Gazette</h3>
           <p class="micro">The headlines shift with the wind.</p>
         </article>
-        <article class="tome" tabindex="0">
+        <article class="tome glow" tabindex="0">
           <h3>Recipes for the Brave</h3>
           <p class="micro">Tastes better at midnight.</p>
         </article>
       </section>
 
-      <nav class="pager">
+      <nav class="pager pager-center">
         <a class="btn prev" href="#page2">← Graveyard</a>
         <a class="btn next" href="#page4">To the Pumpkin Patch →</a>
       </nav>
     </section>
 
-    <!-- PAGE 4: Pumpkin Patch (gallery) -->
+    <!-- PAGE 4 -->
     <section id="page4" class="page page-pumpkins" aria-labelledby="p4-title">
       <header class="page-header">
         <h2 id="p4-title" class="display">The Patch at the Edge of Night</h2>
@@ -151,29 +145,49 @@
       </header>
 
       <section class="pumpkin-grid" aria-label="Pumpkin gallery">
-        <div class="pumpkin" aria-hidden="true" title="Cheery Jack">🎃</div>
-        <div class="pumpkin" aria-hidden="true" title="Mischief Jack">🎃</div>
-        <div class="pumpkin" aria-hidden="true" title="Sleepy Jack">🎃</div>
-        <div class="pumpkin" aria-hidden="true" title="Curious Jack">🎃</div>
+        <div class="pumpkin bob" aria-hidden="true" title="Cheery Jack">🎃</div>
+        <div class="pumpkin bob" aria-hidden="true" title="Mischief Jack">🎃</div>
+        <div class="pumpkin bob" aria-hidden="true" title="Sleepy Jack">🎃</div>
+        <div class="pumpkin bob" aria-hidden="true" title="Curious Jack">🎃</div>
       </section>
 
-      <nav class="pager">
+      <nav class="pager pager-center">
         <a class="btn prev" href="#page3">← Library</a>
-        <a class="btn next" href="#team">To Team & Submission →</a>
+        <a class="btn next" href="#page5">To the Mirror Maze →</a>
       </nav>
     </section>
 
-    
+    <!-- PAGE 5: Enchanted Mirror Maze -->
+    <section id="page5" class="page page-maze" aria-labelledby="p5-title">
+      <header class="page-header">
+        <h2 id="p5-title" class="display">Enchanted Mirror Maze</h2>
+        <p class="lede">Find your way through shifting reflections and neon whispers.</p>
+      </header>
+
+      <div class="maze" role="region" aria-label="Mirror maze panels">
+        <div class="mirror m1" tabindex="0" title="Mirror 1"></div>
+        <div class="mirror m2" tabindex="0" title="Mirror 2"></div>
+        <div class="mirror m3" tabindex="0" title="Mirror 3"></div>
+        <div class="mirror m4" tabindex="0" title="Mirror 4"></div>
+        <div class="mirror m5" tabindex="0" title="Mirror 5"></div>
+        <div class="mirror m6" tabindex="0" title="Mirror 6"></div>
+        <div class="mirror m7" tabindex="0" title="Mirror 7"></div>
+        <div class="mirror m8" tabindex="0" title="Mirror 8"></div>
+        <div class="mirror m9" tabindex="0" title="Mirror 9"></div>
+      </div>
+
+      <nav class="pager pager-center">
+        <a class="btn prev" href="#page4">← Pumpkin Patch</a>
+        <a class="btn next" href="#page1">Back to Intro ↻</a>
+      </nav>
+    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <p>🕯️ Built with semantic HTML & modern CSS — no JS. Accessible focus, reduced motion, CSS variables, Grid/Flex, transitions & keyframes.</p>
-    <p class="tagline">“The bravest stories are told in a whisper.”</p>
+    <p>🕯️ CSS-only. Accessible focus, reduced motion, CSS variables, Grid/Flex, transitions & keyframes.</p>
+    <p class="tagline">“What you see is not always what is.”</p>
   </footer>
 
-  <!-- Default-visible page when no #hash is present (fallback when JS disabled) -->
-  <noscript>
-    <style>.page{display:block}</style>
-  </noscript>
+  <noscript><style>.page{display:block}</style></noscript>
 </body>
 </html>
